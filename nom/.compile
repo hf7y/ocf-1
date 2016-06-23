@@ -1,0 +1,53 @@
+#!/bin/bash
+
+posts="./"
+P=".posts"
+
+#Be sure to clear out $1 and $P files. I'm to nervous to do this for you.
+
+echo touching $P
+touch $P
+
+echo building
+
+cat ./$posts/.head >> $P
+
+
+echo stitching
+#for entry in `ls $posts`; do
+#
+##	printf "<h3><a href=\"#$entry\">" >> $P
+#	head -n 1 $posts$entry >> $P
+#	printf "</a></h3>\n\n" >> $P
+#done
+
+
+T=$posts".temp"
+rm $T
+touch $T
+
+for entry in `ls $posts | tac`; do
+
+	echo "<a href=\"#$entry\">"$entry"</a><br>" >> $P
+
+	echo $posts$entry in $posts
+	echo "<a id=\"$entry\">" >> $T
+	echo "<h2>$entry</h2>" >> $T
+	echo '</a>' >> $T
+	
+	echo '<pre>' >> $T
+	cat $posts$entry >> $T
+	echo '</pre>' >> $T
+
+done
+
+cat $T >> $P
+cat ./$posts/.tail >> $P
+
+if [ $1 ]
+then
+echo $1.html
+mv $P $1.html
+fi
+
+exit

@@ -1,0 +1,66 @@
+#!/bin/bash
+
+P=$1
+posts="./"
+
+
+#checking for flags
+if [ -z $1 ];
+then 
+echo defaulting to ".posts.html"
+P=".posts"
+fi
+
+
+echo touching $P
+touch $P
+
+echo building
+cat ./$posts/.head >> $P
+
+
+echo stitching
+#left over from blog@hf7y
+#for entry in `ls $posts`; do
+#
+##	printf "<h3><a href=\"#$entry\">" >> $P
+#	head -n 1 $posts$entry >> $P
+#	printf "</a></h3>\n\n" >> $P
+#done
+
+
+#making a temp spot to work around table of contents
+T=$posts/".temp"
+touch $T
+
+for entry in `ls $posts | tac`; do
+
+	echo $posts$entry in $posts
+	echo "<a href=\"#$entry\">"$entry"</a><br>" >> $P
+	
+	echo "<a id=\"$entry\">"+"<h2>$entry</h2>"../md.pl >> $P
+	
+	echo '</a>' >> $T
+	
+	echo '<pre>' >> $T
+	
+	cat $posts$entry >> $T
+
+	echo '</pre>' >> $T
+#	echo \` > $posts$temp
+#	cat $posts$entry >> $posts$temp
+#	echo \` >> $posts$temp
+#	tail -n +0 $posts$temp | perl ../md.pl >> $P
+
+#	tail -n +0 $posts$entry | perl ../md.pl >> $P
+done
+
+cat $T >> $P
+cat ./$posts/.tail >> $P
+printf '</body>\n</html>' >> $P
+
+#cat $P
+mv $P $P.html
+echo $P.html
+
+exit

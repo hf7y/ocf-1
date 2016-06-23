@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z $1 ];
+then 
+echo fuck you
+exit
+fi
+
+touch $1.html
+
+#echo -e '<html>\n<title>' > $1.html
+#head -n 1 $1 >> $1.html
+#echo -e '</title>\n<body leftmargin="50" topmargin="50">' >> $1.html
+perl ../md.pl $1 >> $1.html
+#echo -e '</body>\n</html>' >> $1.html
+
+#echo $1.html
+#cat $1.html
+
+exit

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+P=$1
+posts="./"
+
+
+if [ -z $1 ];
+then 
+echo fuck you
+P=".posts"
+fi
+
+echo touching $P
+touch $P
+
+echo building
+
+cat ./$posts/.head >> $P
+
+
+echo stitching
+#for entry in `ls $posts`; do
+#
+##	printf "<h3><a href=\"#$entry\">" >> $P
+#	head -n 1 $posts$entry >> $P
+#	printf "</a></h3>\n\n" >> $P
+#done
+
+
+for entry in `ls $posts | tac`; do
+
+	echo $posts$entry in $posts
+	echo "<a id=\"$entry\">" >> $P
+	echo "<h3>$entry</h3>" >> $P
+		
+	#head -n 2 $posts$entry | perl ../md.pl >> $
+	echo '</a>' >> $P
+	
+	temp
+
+	cat "`" >> .tmp~
+	cat $posts$entry >> .tmp~
+	cat "`" >> .tmp~
+
+	tail -n +0 .tmp~ | perl ../md.pl >> $P
+done
+
+cat ./$posts/.tail >> $P
+printf '</body>\n</html>' >> $P
+
+#cat $P
+mv $P $P.html
+echo $P.html
+
+exit
