@@ -1,0 +1,22 @@
+#overture{
+	text-align: center;
+}
+#feature{
+	overflow: hidden;
+	position: relative;
+	left: 2vw;
+}
+#coda{
+	position: relative;
+	left: 1vw;
+	bottom: 1vh;
+	height: 5vh;
+	text-align: center;
+}
+body{
+	width: 90vw;
+}
+pre{
+	position: relative;
+}
+

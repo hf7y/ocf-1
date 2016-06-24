@@ -1,0 +1,49 @@
+#tutti {
+	width: 340px;
+	align-content: space-around;
+}
+
+#heads {
+	text-align: right;
+	line-height: 600%;
+}html {
+	font-family: serif;
+	color: #000;
+}
+
+h1 {
+	font-size: 15em;
+}
+
+h2 {
+	font-size: 8em;
+}
+
+p {
+	font-family: 'helvetica', sans-serif;
+	font-size: 1.5em;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	background-color: #000;
+}
+
+pre {
+	font-family: 'courier', monospace;
+	font-size: 3em;
+}
+
+#tutti {
+	width: 340px;
+	align-content: space-around;
+}
+
+#heads {
+	text-align: right;
+	line-height: 100%;
+}

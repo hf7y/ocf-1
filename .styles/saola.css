@@ -1,0 +1,43 @@
+pre {
+}
+
+h3 {
+	float: right;
+}
+#berkeleyside {
+	background-image: url("http://ocf.berkeley.edu/~pine/zach/z1.png");
+	color: black;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+#freiburg {
+	background-image: url("http://ocf.berkeley.edu/~pine/zach/z2.png");
+	color: black;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#gun {
+	background-image: url("http://ocf.berkeley.edu/~pine/zach/z3.png");
+	color: white;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+#whitman {
+	background-image: url("http://ocf.berkeley.edu/~pine/zach/z4.png");
+	color: white;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#boulder {
+	background-image: url("http://ocf.berkeley.edu/~pine/zach/z5.png");
+	color: black;
+	background-size: 100% auto;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+	
+

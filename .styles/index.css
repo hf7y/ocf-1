@@ -1,0 +1,24 @@
+body{
+	font-size: 48px;
+}
+
+h1{
+	font-size: 250%;
+}
+
+h2{
+	padding-right: 15vw;
+	text-align: right;
+	font-size: 150%;
+	line-height: 1em;
+}
+
+h3{
+	font-size: 120%;
+}
+
+#bar{
+	width: 100%; 
+	color: white;
+	background: black;
+}
